@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <h1>🧍‍♂️ Fitness Tracker</h1>
+
+    <section id="plan-erstellen">
+        <h2>Trainingsplan erstellen</h2>
+        <input type="text" id="uebung-name" placeholder="Übung: Name">
+        <input type="text" id="uebung-beschreibung" placeholder="Beschreibung">
+        <input type="text" id="uebung-bild-url" placeholder="Bild-URL">
+        <button onclick="addUebung()">Hinzufügen</button>
+        <ul id="uebungsliste"></ul>
+    </section>
+
+    <section id="training-starten">
+        <h2>Training starten</h2>
+        <button onclick="startTraining()">Start</button>
+        <div id="training-info" style="display:none;">
+            <p>Startzeit: <span id="startzeit"></span></p>
+            <div id="satz-erfassung"></div>
+            <button onclick="beendeTraining()">Training beenden</button>
+            <p>Endzeit: <span id="endzeit"></span></p>
+        </div>
+    </section>
+
+    <script src="/static/js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/js/sw.js')
+            .then(() => console.log("✅ Service Worker registriert"))
+            .catch(err => console.error("❌ Fehler beim Registrieren des Service Workers:", err));
+        }
+    </script>
+</body>
+</html>
