@@ -1,2 +1,0 @@
-# Fitnesstracker
-Fitnesstracker Webapp
