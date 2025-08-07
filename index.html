@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Tracker</title>
-    <link rel="manifest" href="/static/manifest.json">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="manifest" href="static/manifest.json">
+    <link rel="stylesheet" href="static/css/style.css">
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
@@ -34,7 +34,7 @@
     <script src="/static/js/app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/static/js/sw.js')
+            navigator.serviceWorker.register('static/js/sw.js')
             .then(() => console.log("✅ Service Worker registriert"))
             .catch(err => console.error("❌ Fehler beim Registrieren des Service Workers:", err));
         }
